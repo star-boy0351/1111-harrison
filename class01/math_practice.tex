@@ -1,0 +1,60 @@
+\documentclass[12pt]{article}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{graphicx}
+\setlength{\parindent}{0mm}
+
+\begin{document}
+
+{\centering
+\large Math Practice \par
+}
+\hfill \break
+
+Problems 1-3 - Solve the equation for $x$ using the following techniques:
+(a) symbolically with paper and pencil,
+(b) using the SageMath software,
+(c) graphically by setting the left-hand-side equal to $y_1$ and the right-hand-side equal to $y_2$ and seeing where the two lines intersect. \\ \\
+1) $10 - 5(x+3) = 3x - 9$ \\ \\
+\underline{Solution} $-$ \\
+(a) Distribute the $-5$ to the $x$ and the $3$:
+\begin{center}
+$10 - 5x - 15 = 3x - 9$
+\end{center}
+Bring like terms to the same side of the equation and combine them:
+\begin{center}
+$4 = 8x$
+\end{center}
+Divide both sides by $8$:
+\begin{center}
+$x = \frac{1}{2}.$
+\end{center}
+(b) Run the following SageMath script:
+\begin{verbatim}
+x, y1, y2 = var("x y1 y2")
+y1 = 10 - 5*(x + 3)
+y2 = 3*x - 9
+solve([y1 == y2], x)
+\end{verbatim}
+(c) Run the following SageMath script:
+\begin{verbatim}
+p1 = plot(y1, (x, 0, 2), color="red")
+p2 = plot(y2, (x, 0, 2), color="blue")
+g = Graphics()
+g += p1
+g += p2
+g.show()
+\end{verbatim}
+
+\pagebreak
+
+2) $\frac{6}{x+2} + \frac{2}{x-4} = \frac{-7}{x^2 - 2x - 8}$
+
+\pagebreak
+
+3) $x^2 + 5x = -1$
+
+\pagebreak
+
+4) Find an equation for the line that passes through the points $(-2, 3)$ and $(6, 7)$.
+
+\end{document}
