@@ -1,0 +1,48 @@
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script>
+<script>sagecell.makeSagecell({"inputLocation": ".sage"});</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<br>
+This is the gh-page for Physics 1111 with Dr. Harrison.
+Below is an area for running SageMath scripts.
+The default example shows how to solve the system of equations:
+$$
+x + y = 0 \\
+x - 2y = 6.
+$$
+See below for more examples.
+<br>
+<br>
+
+<div class="sage">
+	<script type="text/x-sage">
+x, y = var("x, y")
+solve([x + y == 0, x - 2*y == 6], x, y)
+	</script>
+</div>
+
+<br>
+<br>
+
+To solve the equation
+$$
+\frac{6}{x+2} + \frac{2}{x-4} = \frac{-7}{x^2 - 2x - 8}
+$$
+run the following script:
+<pre>
+<code>
+x = var("x")
+solve([6/(x+2) + 2/(x-4) == -7/(x^2 - 2*x - 8)], x)
+</code>
+</pre>
+or equivalently:
+<pre>
+<code>
+x, y1, y2 = var("x, y1, y2")
+y1 = 6/(x+2) + 2/(x-4)
+y2 = -7/(x^2 - 2*x - 8)
+solve([y1 == y2], x)
+</pre>
+</code>
